@@ -1,0 +1,71 @@
+{% block javascript %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+{% endblock %}
+{% block content %}
+    <h1>Warenkorb</h1>
+        <div class="labels">
+            <label class="handy-img">Handybild</label>
+            <label class="handy-brand">Hersteller</label>
+            <label class="handy-name">Modell</label>
+            <label class="handy-details">Beschreibung</label>
+            <label class="handy-price">Preis</label>
+
+        </div>
+
+        {% for handy in handys %}
+            <div class="cart">
+
+                <div class="handy-img">
+                    <img src="{{ handy.image }}">
+                </div>
+
+                <div class="handy-brand">
+                    <strong>{{ handy.brand }}</strong>
+                </div>
+
+                <div class="handy-name">
+                    <strong>{{ handy.name }}</strong>
+                </div>
+
+                <div class="handy-details">
+                    <ul type="disc">
+                        <li>Farbe: {{ handy.color }}</li>
+                        <li>Speicher: {{ handy.memory }}GB</li>
+                        <li>RAM: {{ handy.ram }}</li>
+                    </ul>
+                </div>
+
+                <div class="handy-price">
+                    {{ handy.price }}€
+                </div>
+
+            </div>
+        {% endfor %}
+
+        <div class="totals">
+            <div class="totals-item">
+                <label>Zwischensumme</label>
+                <div class="totals-value" id="cart-zwischensumme">
+                    {{ summe }}€
+                </div>
+            </div>
+            <div class="totals-item">
+                <label>Mwst.(16%)</label>
+                <div class="totals-value" id="cart-mwst">
+                    {{ summeMwSt }}€
+                </div>
+            </div>
+            <div class="totals-item">
+                <label>Versand</label>
+                <div class="totals-value" id="cart-versand">
+                    {{ versand }}€
+                </div>
+            </div>
+            <div class="totals-item">
+                <label>Endbetrag</label>
+                <div class="totals-value" id="cart-endbetrag">
+                    {{ gesamtSumme }}€
+                </div>
+            </div>
+        </div>
+{% endblock %}

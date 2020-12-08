@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+{% block javascript %}
+<script src = {{ asset('/javascripts/orderHistory.js') }}></script>
+{% endblock %}
+{% block content %}
+    <h1>Bestellhistorie</h1>
+    {% if orders is empty %}
+        Keine Bestellungen in Ihrer Historie
+    {% else %}
+    <div id="orderDetailOverlay"></div>
+        {% for order in orders %}
+            <div class="orderHistorie">
+                <button class="historyDetails" onclick="orderDetails({{ order.iD}})" >Details</button>
+                <div class="order-date">
+                    {{ order.date|date('Y-m-d') }}
+                </div>
+
+                <div class="order-sum">
+                    <strong>Bestellwert: {{ order.sum }}€</strong>
+                </div>
+
+            </div>
+        {% endfor %}
+
+        <div class="totals">
+            <button class="checkout" >Zurück</button>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+{% block javascript %}
+    <script src = {{ asset('/javascripts/overview.js') }}></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+{% endblock %}
+{% block content %}
+    <h1>Alle Handys</h1>
+    {% for handy in handys %}
+
+        <div class="handy">
+            <div class="handy-headline">
+                {% if handy.brand is defined %}
+                    {{ handy.brand }}
+                {% endif %}
+                {% if handy.name is defined %}
+                    {{ handy.name }}
+                {% endif %}
+                {% if handy.model is defined %}
+                    {{ handy.model }}
+                {% endif %}
+            </div>
+            <div class="handy-icon">
+                {% if handy.image is defined %}
+                    <img src="{{ handy.image }} alt="{{ handy.name }}">
+                {% endif %}
+            </div>
+            {% if handy.price is defined %}
+                <button class="addToCart" onclick="addtoCart({{ handy.iD }})"><i class="fa fa-cart-plus"></i></button>
+                <a href="/info/{{ handy.iD }}"><i class="fa fa-info-circle"></i></a>
+                <div class="handy-price">
+                    {{ handy.price }}€
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}

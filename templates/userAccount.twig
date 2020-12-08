@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+{% block content %}
+    {{ form_start(form) }}
+    <div class="user-account">
+            <img src="ausweis.png" alt="">
+
+        <h1>Mein Konto</h1>
+        <p>Du kannst deine nachstehenden Daten jederzeit bearbeiten, damit dein Handyshop24-Konto immer aktuell ist.</p>
+
+
+        {{ form_widget(form.Vorname, {'attr': {'placeholder': 'Vorname'}}) }}
+
+        {{ form_widget(form.Nachname, {'attr': {'placeholder': 'Nachname'}}) }}
+
+        {{ form_widget(form.Strasse, {'attr': {'placeholder': 'Straße'}}) }}
+
+        {{ form_widget(form.Hausnummer, {'attr': {'placeholder': 'Hausnummer'}}) }}
+
+        {{ form_widget(form.Stadt, {'attr': {'placeholder': 'Stadt'}}) }}
+
+        {{ form_widget(form.PLZ, {'attr': {'placeholder': 'PLZ'}}) }}
+
+        {{ form_row(form.Speichern) }}
+
+        <form action="/userOptions">
+            <input type="submit" value="Zurück">
+        </form>
+        <form action="/changePassword">
+            <input type="submit" value="Passwort ändern"/>
+        </form>
+    </div>
+    {{ form_end(form) }}
+
+{% endblock %}

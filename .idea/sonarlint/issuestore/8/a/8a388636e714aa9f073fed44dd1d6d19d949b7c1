@@ -1,0 +1,5 @@
+
+p	php:S37766"TRefactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.(ûıÛÊ8çÇœ¾ã.
+k	php:S11426"OReduce the number of returns of this function 4, down to the maximum allowed 3.(ûıÛÊ8„ŸîÃá.
+l	php:S1192("KDefine a constant instead of duplicating this literal "login.twig" 3 times.(±¦¡¦ıÿÿÿÿ8„ŸîÃá.
+r	php:S1192="QDefine a constant instead of duplicating this literal "userOptions.twig" 3 times.(€­¾íøÿÿÿÿ8„ŸîÃá.

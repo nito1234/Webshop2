@@ -1,0 +1,63 @@
+{% extends "base.html.twig" %}
+{% block fullSize %}
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2459.807577634952!2d7.60996131632243!3d51.937463286987374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b9a53652e44753%3A0x8b120b0d757e5844!2sLudwig-Erhard-Berufskolleg%20M%C3%BCnster!5e0!3m2!1sde!2sde!4v1604999642438!5m2!1sde!2sde"></iframe>
+{% endblock %}
+{% block content %}
+    <div class="zeiten">
+        <h1>Öffnungszeiten</h1>
+        <h2>Wir haben für Sie geöffnet</h2>
+        <table>
+            <tr>
+                <td>Montag</td>
+                <td>09:00 - 18:00 Uhr</td>
+            </tr>
+            <tr>
+                <td>Dienstag</td>
+                <td>09:00 - 18:00 Uhr</td>
+            </tr>
+            <tr>
+                <td>Mittwoch</td>
+                <td>09:00 - 18:00 Uhr</td>
+            </tr>
+            <tr>
+                <td>Donnerstag</td>
+                <td>09:00 - 18:00 Uhr</td>
+            </tr>
+            <tr>
+                <td>Freitag</td>
+                <td>09:00 - 18:00 Uhr</td>
+            </tr>
+            <tr>
+                <td>Samstag</td>
+                <td>09:00 - 14:00 Uhr</td>
+            </tr>
+        </table>
+        <p>An Sonntagen und gesetzlichen Feiertagen haben wir geschlossen!</p>
+    </div>
+        <div class="kontaktaufnahme">
+            <h2>Nehmen Sie Kontakt mit uns auf!</h2>
+            <p>Für nähere Informationen stehen wir Ihnen gerne zur Verfügung. Ihr Feedback interessiert uns jederzeit!</p>
+            <p>Bitte füllen Sie alle Felder vollständig aus, damit wir Ihre Anfrage bestmöglich beantworten können.</p>
+            <p>
+                <strong>Vielen Dank.</strong>
+            </p>
+
+            <form>
+
+                <input name="name" type="text" class="feedback-input" placeholder="Name"/>
+
+                <input name="email" type="text" class="feedback-input" placeholder="Email" />
+
+                <input name="betreff" type="text" class="feedback-input" placeholder="Betreff" />
+
+                <textarea name="text" class="textarea" placeholder="Nachricht"></textarea>
+                <!--dsgvo------------------>
+                <div class="contact-dsgvo">
+                	<input type="checkbox"><p>Ich stimme zu, dass zur Beantwortung meiner Anfrage meine Angaben aus dem Kontaktformular erhoben und verarbeitet werden dürfen.Hinweise: Nach abgeschlossener Bearbeitung der Anfrage werden die Daten gelöscht. Die Einwilligung kann jederzeit für die Zukunft per E-Mail an <a href="mailto:widerruf@handyshop24.de;">widerruf@handyshop24.de</a> widerrufen werden. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer <a href="/datenschutz">Datenschutzerklärung</a></p>
+                </div>
+                <!--button-send--------------->
+                <input type="submit" value="Senden"/>
+            </form>
+        </div>
+{% endblock %}
+

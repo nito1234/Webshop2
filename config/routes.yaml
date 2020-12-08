@@ -1,0 +1,63 @@
+index:
+    path: /
+    controller: App\Controller\IndexController::indexAction
+products:
+    path: /products
+    controller: App\Controller\ProductsController::productsAction
+aboutUs:
+    path: /aboutUs
+    controller: App\Controller\IndexController::aboutUsAction
+contact:
+    path: /contact
+    controller: App\Controller\IndexController::contactAction
+login:
+    path: /login
+    controller: App\Controller\CustomerController::loginAction
+logOut:
+    path: /logOut
+    controller: App\Controller\CustomerController::logOut
+changePassword:
+    path: /changePassword
+    controller: App\Controller\CustomerController::changePasswordAction
+register:
+    path: /register
+    controller: App\Controller\CustomerController::registerAction
+info:
+    path: /info/{id}
+    controller: App\Controller\ProductsController::productDetailsAction
+impressum:
+    path: /impressum
+    controller: App\Controller\IndexController::impressumAction
+datenschutz:
+    path: /datenschutz
+    controller: App\Controller\IndexController::dataPrivacyAction
+cart:
+    path: /cart
+    controller: App\Controller\CartController::cartAction
+myAccount:
+    path: /myAccount
+    controller: App\Controller\CustomerController::customerAccountAction
+addToCart:
+    path: /addToCart
+    controller: App\Controller\CartController::addToCart
+removeItemFromChart:
+    path: /removeItem
+    controller: App\Controller\CartController::removeItemFromCart
+getCartElements:
+    path: /getCartElements
+    controller: App\Controller\CartController::getCartElements
+checkout:
+    path: /bestellabschluss
+    controller: App\Controller\CartController::checkOutAction
+orderOverview:
+    path: /orderOverview
+    controller: App\Controller\OrderController::orderOverviewAction
+orderComplete:
+    path: /orderComplete
+    controller: App\Controller\OrderController::orderCompleteAction
+orderHistory:
+    path: /orderHistory
+    controller: App\Controller\OrderController::orderHistoryAction
+orderDetails:
+    path: /orderDetails
+    controller: App\Controller\OrderController::orderDetails

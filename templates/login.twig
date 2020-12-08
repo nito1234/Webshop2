@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+{% block javascript %}
+    <script src = {{ asset('/javascripts/login.js') }}></script>
+{% endblock %}
+{% block content %}
+    {{ form_start(form) }}
+    <div class="container-login">
+        <h1>Login</h1>
+
+                {{ form_widget(form.Username, {'attr': {'placeholder': 'Username'}}) }}
+
+                {{ form_widget(form.Passwort, {'attr': {'placeholder': 'Password'}}) }}
+        <div>
+            {{ form_row(form.Anmelden) }}
+        </div>
+        <p> Noch nicht angemeldet? <br>
+            Registriere dich <a href="/register"><strong>hier!</strong></a>
+        </p>
+
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

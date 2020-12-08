@@ -1,0 +1,77 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/php; charset=utf-8" />
+    <title>Willkommen im ITFO3 Shop Maid Test</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}"/>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <script src="{{ asset('javascripts/javascript.js') }}"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    {% block javascript %}{% endblock %}
+</head>
+<body onload="fillCart()">
+
+
+<div class="header">
+    <a href="/"><img src="logo.png" height="60"></a>
+    <div class="header-nav">
+        <ul>
+            <li><a href="/products">Handys</a></li>
+            <li><a href="/aboutUs">Über uns</a></li>
+            <li style="float:right"><a href="/cart"><i class="fa fa-shopping-cart"></i></a><span class='badge badge-warning' id='lblCartCount'> 0 </span></li>
+            <li style="float:right"><a href="/login"><i class="fa fa-user"></i></a></li>
+        </ul>
+    </div>
+</div>
+    {% for messages in app.flashes(['notice']) %}
+        {% for message in messages %}
+            <div class="flash-message">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+
+<div id="banner">{% block fullSize %}{% endblock %}
+</div>
+<div id="content">{% block content %}{% endblock %}
+</div>
+
+</body>
+<footer>
+    <div class="footer-main">
+        <div>
+            <a href="/"><img src="logo.png" alt="ITFO3 Shop"></a>
+        </div>
+        <div>
+            <h4>Sitemap</h4>
+            <div class="sitemap">
+                <ul>
+                    <li><a href="/products">Handys</a></li>
+                    <li><a href="/aboutUs">Über uns</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h4>Rechtliches</h4>
+            <ul>
+                <li><a href="/impressum">Impressum</a></li>
+                <li><a href="/datenschutz">Datenschutz</a></li>
+            </ul>
+        </div>
+        <div class="contact">
+            <h4>Kontakt</h4>
+            <p><b><a href="tel:+49238112345;">+(49) 2381 12345</a></b></p>
+            <p>Sie erreichen uns</p>
+            <p>Mo. - Fr. von 09:00 - 18:00 Uhr</p>
+            {#<p>Sa. von 09:00 - 14:00 Uhr</p>
+            <p>So. und an Feiertagen geschlossen</p>
+            #}
+            <p>Für mehr Informationen klicken Sie <a href="/contact">hier</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Developed by <a href="https://www.lebk-muenster.de/" target="_blank">LEBK DevTeam</a></p>
+    </div>
+</footer>
+</html>

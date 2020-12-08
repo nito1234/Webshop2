@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+{% block javascript %}
+<script src = {{ asset('/javascripts/userOptions.js') }}></script>
+{% endblock %}
+{% block content %}
+    <div class="profile-overview">
+        <div class="profile-pic">
+            <div class="img">
+                <img src="user.png" alt="">
+            </div>
+        </div>
+
+        <div class="profile-info">
+            <h1>Hallo,</h1>
+             <strong>{{ customer.surname }} {{ customer.lastname }}</strong>
+
+
+            <div class="buttons">
+                <button type="submit" onclick="myAccount()">Mein Konto</button>
+                <button type="submit" onclick="orderHistory()">Bestellübersicht</button>
+                <button type="submit" onclick="logOut()">Ausloggen</button>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

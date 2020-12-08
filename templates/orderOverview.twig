@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+{% block javascript %}
+    <script src = {{ asset('/javascripts/overview.js') }}></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+{% endblock %}
+{% block content %}
+    <h1>Checkout</h1>
+
+    Liefer- und Rechnungsadresse
+    <br>
+    {{ customer.surname }} {{ customer.lastname }}
+    <br>
+    {{ customer.postcode }} {{ customer.city }}
+    <br>
+    {{ customer.street }} {{ customer.number }}
+    <br><br><br><br>
+
+    {% for handy in values.handys %}
+        <div class="cart">
+            <div class="handy-brand">
+                <strong>{{ handy.brand }}</strong>
+            </div>
+            <div class="handy-name">
+                <strong>{{ handy.name }}</strong>
+            </div>
+            <div class="handy-price">
+                {{ handy.price }}€
+            </div>
+
+        </div>
+    {% endfor %}
+
+    <h3>Rechnungssumme</h3>
+    <h3>Versandkosten: {{ values.versand }}€</h3>
+    <h3>Mehrwehrsteuer: {{ values.summeMwSt }}€</h3>
+    <h3>Rechnungsbetrag: {{ values.gesamtSumme }}€</h3>
+
+    <button type="submit" name="orderComplete" onclick="orderComplete ()">Bestellung bestätigen</button>
+
+{% endblock %}

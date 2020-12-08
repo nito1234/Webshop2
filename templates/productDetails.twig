@@ -1,0 +1,68 @@
+{% extends "base.html.twig" %}
+{% block javascript %}
+    <script src = {{ asset('/javascripts/overview.js') }}></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+{% endblock %}
+{% block content %}
+
+            <div class="detail info">
+                <div class="detail-row-first">
+                    <div class="detail-brand">
+                        <strong>{{ handy.brand }}</strong>
+                        <strong>{{ handy.name }}</strong>
+                    </div>
+                    <div class="detail-mehr">
+                        <div class="detail-img">
+                            <img src="{{ handy.image }}">
+                        </div>
+                        <div detail-auswahl>
+                            <div class="detail-colors">
+                                <p>In den zuküntigen Updates kommt die Auswahl der Farben. Aktuell nur ein Platzhalter</p>
+                                <strong>Farbauswahl</strong>
+                                <div class="red"></div>
+                                <div class="white"></div>
+                                <div class="black"></div>
+                            </div>
+                            <div class="detail-memory">
+                                <p>In den zuküntigen Updates kommt die Auswahl der Speicherkapazität. Aktuell nur ein Platzhalter</p>
+                                <strong>Speicherauswahl</strong>
+                                <a>{{ handy.memory }}GB</a>
+                                <a>{{ handy.memory }}GB</a>
+                            </div>
+                            <div class="detail-available">
+                                <p>Verfügbarkeit - <strong>Auf Lager</strong></p>
+                                <a href="/products">Zurück zu allen Handys</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-row-second">
+                    <div class="detail-text">
+                        <strong>Details zu Ihrem Smatphone</strong>
+                    </div>
+                    <div class="detail-mehr">
+                        <div class="detail-info">
+                            <strong>Details</strong>
+                            <ul type="disc">
+                                <li>Farbe: {{ handy.color }}</li>
+                                <li>Speicher: {{ handy.memory }}GB</li>
+                                <li>RAM: {{ handy.ram }}</li>
+                            </ul>
+                        </div>
+                        <div class="detail-price">
+                            <strong>Preis</strong>
+                            {{ handy.price }}€
+                            <button class="addToCart" onclick="addtoCart({{ handy.iD }})">
+                                <p>
+                                    In den Warenkorb <i class="fa fa-cart-plus"></i>
+                                </p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+
+    </div>
+{% endblock %}

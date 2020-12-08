@@ -1,0 +1,56 @@
+doctrine:
+  dbal:
+    default_connection:       default
+    connections:
+      default:
+        dbname:           Symfony
+        user:             root
+        password:         null
+        host:             localhost
+        port:             3306
+        server_version:   '5.7'
+      Webshop:
+        dbname:           Webshop
+        user:             itfo
+        password:         itfo
+        host:             localhost
+        port:             3306
+        server_version:   '5.7'
+  orm:
+    entity_managers:
+      customer:
+        connection: Webshop
+        mappings:
+          Main:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Entity/'
+            prefix: 'App\Entity\Customer'
+            alias: Main
+      handy:
+        connection: Webshop
+        mappings:
+          Main:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Entity/'
+            prefix: 'App\Entity\Handy'
+            alias: Main
+      Order:
+        connection: Webshop
+        mappings:
+          Main:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Entity/'
+            prefix: 'App\Entity\Order'
+            alias: Main
+      OrderHandy:
+        connection: Webshop
+        mappings:
+          Main:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Entity/'
+            prefix: 'App\Entity\OrderHandy'
+            alias: Main
